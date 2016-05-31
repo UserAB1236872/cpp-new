@@ -42,7 +42,7 @@ fn main() {
 
 	// Scope this so all the files get closed at the end of this block
 	{
-		fs::create_dir_all(&*proj_path)
+		fs::create_dir(&*proj_path)
 			.unwrap_or_else(|e| panic!("Cannot create project directory: {}", e));
 
 		proj_path.push("libs");
