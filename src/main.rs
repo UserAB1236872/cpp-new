@@ -31,7 +31,10 @@ macro_rules! exit {
     ($fmt:expr) => { 
     	{
     		use std::process;
-	     	println!($fmt);
+    		use std::io;
+
+	     	write!(io::stderr(),$fmt).
+	     		.expect("Could not write error to stderr");
 
 	     	process::exit(1)
      	}
@@ -39,7 +42,9 @@ macro_rules! exit {
     ($fmt:expr, $($arg:tt)*) => { 
     	{
     		use std::process;
-	     	println!($fmt, $($arg)*);
+    		use std::io;
+	     	write!(io::stderr(),$fmt, $($arg)*)
+	     		.expect("Could not write error to stderr");
 
 	     	process::exit(1)
     	 }
