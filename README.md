@@ -4,7 +4,7 @@ A small Rust script that will create a C++ project in a Cargo-like setup.
 Platforms
 ---
 
-This is tested on MSYS 2 on Windows 10, it likely will not work on other MSYS shells or versions of Windows (currently the Makefile checks against `NT10.0` which I assume means Windows 10.0, I'm not sure how to generalize the check). It should also work properly on Darwin and MOST flavors of Windows.
+This is tested on MSYS 2 on Windows 10, it likely will not work on other MSYS shells or versions of Windows (currently the Makefile checks against `NT10.0` which I assume means Windows 10.0, I'm not sure how to generalize the check). It should also work properly on Darwin and most standard flavors of Linux.
 
 When to Use
 ---
