@@ -76,6 +76,20 @@ fn main() {
 			.unwrap_or_else(|e| exit!("Cannot create libs directory: {}", e));
 
 		proj_path.pop();
+		proj_path.push("mingw");
+		fs::create_dir_all(&*proj_path)
+			.unwrap_or_else(|e| exit!("Cannot create libs directory: {}", e));
+
+		proj_path.pop();
+		proj_path.push("darwin");
+		fs::create_dir_all(&*proj_path)
+			.unwrap_or_else(|e| exit!("Cannot create libs directory: {}", e));
+
+		proj_path.pop();
+		proj_path.push("linux");
+		fs::create_dir_all(&*proj_path)
+			.unwrap_or_else(|e| exit!("Cannot create libs directory: {}", e));
+
 		proj_path.push("include");
 		fs::create_dir_all(&*proj_path)
 			.unwrap_or_else(|e| exit!("Cannot create include directory: {}", e));
